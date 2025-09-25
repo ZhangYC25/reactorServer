@@ -2,7 +2,7 @@
 #include "../tcp/eventloop.h"
 #include "../tcp/tcpserver.h"
 #include "../tcp/buffer.h"
-#include "../tcp/threadpool.h"
+#include "../tcp/eventloopthreadpool.h"
 #include "../tcp/tcpconnection.h"
 #include "../base/currentthread.h"
 #include <iostream>
@@ -16,6 +16,7 @@ class EchoServer{
         ~EchoServer();
 
         void start();
+        void setThreadNums(int n);
         void onConnection(const std::shared_ptr<TcpConnection> & conn);
         void onMessage(const std::shared_ptr<TcpConnection> & conn);
 
@@ -31,6 +32,10 @@ EchoServer::~EchoServer(){};
 
 void EchoServer::start(){
     server_.Start();
+}
+
+void EchoServer::setThreadNums(int n){
+    server_.SetThreadNums(n);
 }
 
 void EchoServer::onConnection(const std::shared_ptr<TcpConnection> & conn){
@@ -68,8 +73,10 @@ int main(int argc, char *argv[]){
         printf("error");
         exit(0);
     }
+    unsigned int size = std::thread::hardware_concurrency();
     EventLoop *loop = new EventLoop();
     EchoServer *server = new EchoServer(loop, port);
+    server -> setThreadNums(size);
     server->start();
     
     // delete loop;

@@ -2,7 +2,6 @@
 #include "currentthread.h"
 #include "Epoll.h"
 #include "channel.h"
-#include "threadpool.h"
 #include <vector>
 #include <sys/eventfd.h>
 #include <unistd.h>

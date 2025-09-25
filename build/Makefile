@@ -273,6 +273,54 @@ tcp/eventloop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloop.cpp.s
 .PHONY : tcp/eventloop.cpp.s
 
+tcp/eventloopthread.o: tcp/eventloopthread.cpp.o
+.PHONY : tcp/eventloopthread.o
+
+# target to build an object file
+tcp/eventloopthread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloopthread.cpp.o
+.PHONY : tcp/eventloopthread.cpp.o
+
+tcp/eventloopthread.i: tcp/eventloopthread.cpp.i
+.PHONY : tcp/eventloopthread.i
+
+# target to preprocess a source file
+tcp/eventloopthread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloopthread.cpp.i
+.PHONY : tcp/eventloopthread.cpp.i
+
+tcp/eventloopthread.s: tcp/eventloopthread.cpp.s
+.PHONY : tcp/eventloopthread.s
+
+# target to generate assembly for a file
+tcp/eventloopthread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloopthread.cpp.s
+.PHONY : tcp/eventloopthread.cpp.s
+
+tcp/eventloopthreadpool.o: tcp/eventloopthreadpool.cpp.o
+.PHONY : tcp/eventloopthreadpool.o
+
+# target to build an object file
+tcp/eventloopthreadpool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloopthreadpool.cpp.o
+.PHONY : tcp/eventloopthreadpool.cpp.o
+
+tcp/eventloopthreadpool.i: tcp/eventloopthreadpool.cpp.i
+.PHONY : tcp/eventloopthreadpool.i
+
+# target to preprocess a source file
+tcp/eventloopthreadpool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloopthreadpool.cpp.i
+.PHONY : tcp/eventloopthreadpool.cpp.i
+
+tcp/eventloopthreadpool.s: tcp/eventloopthreadpool.cpp.s
+.PHONY : tcp/eventloopthreadpool.s
+
+# target to generate assembly for a file
+tcp/eventloopthreadpool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/eventloopthreadpool.cpp.s
+.PHONY : tcp/eventloopthreadpool.cpp.s
+
 tcp/tcpconnection.o: tcp/tcpconnection.cpp.o
 .PHONY : tcp/tcpconnection.o
 
@@ -320,30 +368,6 @@ tcp/tcpserver.s: tcp/tcpserver.cpp.s
 tcp/tcpserver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/tcpserver.cpp.s
 .PHONY : tcp/tcpserver.cpp.s
-
-tcp/threadpool.o: tcp/threadpool.cpp.o
-.PHONY : tcp/threadpool.o
-
-# target to build an object file
-tcp/threadpool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/threadpool.cpp.o
-.PHONY : tcp/threadpool.cpp.o
-
-tcp/threadpool.i: tcp/threadpool.cpp.i
-.PHONY : tcp/threadpool.i
-
-# target to preprocess a source file
-tcp/threadpool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/threadpool.cpp.i
-.PHONY : tcp/threadpool.cpp.i
-
-tcp/threadpool.s: tcp/threadpool.cpp.s
-.PHONY : tcp/threadpool.s
-
-# target to generate assembly for a file
-tcp/threadpool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoserver.dir/build.make CMakeFiles/echoserver.dir/tcp/threadpool.cpp.s
-.PHONY : tcp/threadpool.cpp.s
 
 tcp/util.o: tcp/util.cpp.o
 .PHONY : tcp/util.o
@@ -420,15 +444,18 @@ help:
 	@echo "... tcp/eventloop.o"
 	@echo "... tcp/eventloop.i"
 	@echo "... tcp/eventloop.s"
+	@echo "... tcp/eventloopthread.o"
+	@echo "... tcp/eventloopthread.i"
+	@echo "... tcp/eventloopthread.s"
+	@echo "... tcp/eventloopthreadpool.o"
+	@echo "... tcp/eventloopthreadpool.i"
+	@echo "... tcp/eventloopthreadpool.s"
 	@echo "... tcp/tcpconnection.o"
 	@echo "... tcp/tcpconnection.i"
 	@echo "... tcp/tcpconnection.s"
 	@echo "... tcp/tcpserver.o"
 	@echo "... tcp/tcpserver.i"
 	@echo "... tcp/tcpserver.s"
-	@echo "... tcp/threadpool.o"
-	@echo "... tcp/threadpool.i"
-	@echo "... tcp/threadpool.s"
 	@echo "... tcp/util.o"
 	@echo "... tcp/util.i"
 	@echo "... tcp/util.s"

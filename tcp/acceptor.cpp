@@ -60,7 +60,7 @@ void Acceptor::AcceptConnection(){
     assert(listenfd_ != -1);
 
     int clnt_fd = ::accept4(listenfd_, (struct sockaddr *)&client, &client_addrlength, SOCK_NONBLOCK | SOCK_CLOEXEC);
-    
+    printf("accept finish\n");
     if (clnt_fd == -1){
         std::cout << "Failed to Accept" << std::endl;
     }
