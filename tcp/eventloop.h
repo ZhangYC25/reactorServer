@@ -9,6 +9,8 @@
 #include <functional>
 class Epoll;
 //class ThreadPool;
+class TimeStamp;
+class TimeQueue;
 class EventLoop{
 private:
     std::unique_ptr<Epoll> poller_;
@@ -19,6 +21,8 @@ private:
     std::unique_ptr<Channel> wakeup_channel_;
     bool calling_functors_;
     pid_t tid_;
+
+    std::unique_ptr<TimeQueue> timer_queue_;
 public:
     DISALLOW_COPY_AND_MOVE(EventLoop);
     EventLoop();
@@ -28,6 +32,11 @@ public:
     void UpdateChannel(Channel*);
     void DeleteChannel(Channel*);
     //void addThread(std::function<void()>);
+
+    //定时器功能
+    void RunAt(TimeStamp timestamp, std::function<void()> const & cb);
+    void RunAfter(double wait_time, std::function < void()>const & cb);
+    void RunEvery(double interval, std::function<void()> const & cb);
 
     //运行队列中的任务
     void DoToDoList();

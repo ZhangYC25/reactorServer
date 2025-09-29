@@ -5,6 +5,9 @@ project(WebServer)
 include_directories(
     base
     tcp
+    http
+    timer
+    log
 )
 
 SET(CMAKE_CXX_FLAGS "-g -Wall -Werror -std=c++14")
@@ -15,9 +18,15 @@ find_package(Threads REQUIRED)
 
 aux_source_directory(base SRC_LIST1)
 aux_source_directory(tcp SRC_LIST2)
+aux_source_directory(http SRC_LIST3)
+aux_source_directory(timer SRC_LIST4)
+aux_source_directory(log SRC_LIST5)
 
 
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/build/test/)
 
-add_executable(echoserver test/echo_server.cpp ${SRC_LIST1} ${SRC_LIST2} )
+add_executable(echoserver test/echo_server.cpp ${SRC_LIST1} ${SRC_LIST2} ${SRC_LIST3} ${SRC_LIST4} ${SRC_LIST5})
 target_link_libraries(echoserver ${CMAKE_THREAD_LIBS_INIT})
+
+add_executable(httpserver test/http_server.cpp ${SRC_LIST1} ${SRC_LIST2} ${SRC_LIST3} ${SRC_LIST4} ${SRC_LIST5})
+target_link_libraries(httpserver ${CMAKE_THREAD_LIBS_INIT})

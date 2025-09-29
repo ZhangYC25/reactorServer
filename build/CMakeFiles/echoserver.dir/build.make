@@ -237,6 +237,118 @@ CMakeFiles/echoserver.dir/tcp/util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/tcp/util.cpp.s"
 	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/tcp/util.cpp -o CMakeFiles/echoserver.dir/tcp/util.cpp.s
 
+CMakeFiles/echoserver.dir/http/httpcontext.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/http/httpcontext.cpp.o: ../http/httpcontext.cpp
+CMakeFiles/echoserver.dir/http/httpcontext.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/echoserver.dir/http/httpcontext.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/http/httpcontext.cpp.o -MF CMakeFiles/echoserver.dir/http/httpcontext.cpp.o.d -o CMakeFiles/echoserver.dir/http/httpcontext.cpp.o -c /home/zhangyc/webserver/http/httpcontext.cpp
+
+CMakeFiles/echoserver.dir/http/httpcontext.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/http/httpcontext.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/http/httpcontext.cpp > CMakeFiles/echoserver.dir/http/httpcontext.cpp.i
+
+CMakeFiles/echoserver.dir/http/httpcontext.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/http/httpcontext.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/http/httpcontext.cpp -o CMakeFiles/echoserver.dir/http/httpcontext.cpp.s
+
+CMakeFiles/echoserver.dir/http/httprequest.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/http/httprequest.cpp.o: ../http/httprequest.cpp
+CMakeFiles/echoserver.dir/http/httprequest.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/echoserver.dir/http/httprequest.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/http/httprequest.cpp.o -MF CMakeFiles/echoserver.dir/http/httprequest.cpp.o.d -o CMakeFiles/echoserver.dir/http/httprequest.cpp.o -c /home/zhangyc/webserver/http/httprequest.cpp
+
+CMakeFiles/echoserver.dir/http/httprequest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/http/httprequest.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/http/httprequest.cpp > CMakeFiles/echoserver.dir/http/httprequest.cpp.i
+
+CMakeFiles/echoserver.dir/http/httprequest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/http/httprequest.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/http/httprequest.cpp -o CMakeFiles/echoserver.dir/http/httprequest.cpp.s
+
+CMakeFiles/echoserver.dir/http/httpresponse.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/http/httpresponse.cpp.o: ../http/httpresponse.cpp
+CMakeFiles/echoserver.dir/http/httpresponse.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/echoserver.dir/http/httpresponse.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/http/httpresponse.cpp.o -MF CMakeFiles/echoserver.dir/http/httpresponse.cpp.o.d -o CMakeFiles/echoserver.dir/http/httpresponse.cpp.o -c /home/zhangyc/webserver/http/httpresponse.cpp
+
+CMakeFiles/echoserver.dir/http/httpresponse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/http/httpresponse.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/http/httpresponse.cpp > CMakeFiles/echoserver.dir/http/httpresponse.cpp.i
+
+CMakeFiles/echoserver.dir/http/httpresponse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/http/httpresponse.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/http/httpresponse.cpp -o CMakeFiles/echoserver.dir/http/httpresponse.cpp.s
+
+CMakeFiles/echoserver.dir/http/httpserver.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/http/httpserver.cpp.o: ../http/httpserver.cpp
+CMakeFiles/echoserver.dir/http/httpserver.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/echoserver.dir/http/httpserver.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/http/httpserver.cpp.o -MF CMakeFiles/echoserver.dir/http/httpserver.cpp.o.d -o CMakeFiles/echoserver.dir/http/httpserver.cpp.o -c /home/zhangyc/webserver/http/httpserver.cpp
+
+CMakeFiles/echoserver.dir/http/httpserver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/http/httpserver.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/http/httpserver.cpp > CMakeFiles/echoserver.dir/http/httpserver.cpp.i
+
+CMakeFiles/echoserver.dir/http/httpserver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/http/httpserver.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/http/httpserver.cpp -o CMakeFiles/echoserver.dir/http/httpserver.cpp.s
+
+CMakeFiles/echoserver.dir/timer/timequeue.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/timer/timequeue.cpp.o: ../timer/timequeue.cpp
+CMakeFiles/echoserver.dir/timer/timequeue.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/echoserver.dir/timer/timequeue.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/timer/timequeue.cpp.o -MF CMakeFiles/echoserver.dir/timer/timequeue.cpp.o.d -o CMakeFiles/echoserver.dir/timer/timequeue.cpp.o -c /home/zhangyc/webserver/timer/timequeue.cpp
+
+CMakeFiles/echoserver.dir/timer/timequeue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/timer/timequeue.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/timer/timequeue.cpp > CMakeFiles/echoserver.dir/timer/timequeue.cpp.i
+
+CMakeFiles/echoserver.dir/timer/timequeue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/timer/timequeue.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/timer/timequeue.cpp -o CMakeFiles/echoserver.dir/timer/timequeue.cpp.s
+
+CMakeFiles/echoserver.dir/timer/timer.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/timer/timer.cpp.o: ../timer/timer.cpp
+CMakeFiles/echoserver.dir/timer/timer.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/echoserver.dir/timer/timer.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/timer/timer.cpp.o -MF CMakeFiles/echoserver.dir/timer/timer.cpp.o.d -o CMakeFiles/echoserver.dir/timer/timer.cpp.o -c /home/zhangyc/webserver/timer/timer.cpp
+
+CMakeFiles/echoserver.dir/timer/timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/timer/timer.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/timer/timer.cpp > CMakeFiles/echoserver.dir/timer/timer.cpp.i
+
+CMakeFiles/echoserver.dir/timer/timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/timer/timer.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/timer/timer.cpp -o CMakeFiles/echoserver.dir/timer/timer.cpp.s
+
+CMakeFiles/echoserver.dir/log/Logstream.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/log/Logstream.cpp.o: ../log/Logstream.cpp
+CMakeFiles/echoserver.dir/log/Logstream.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/echoserver.dir/log/Logstream.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/log/Logstream.cpp.o -MF CMakeFiles/echoserver.dir/log/Logstream.cpp.o.d -o CMakeFiles/echoserver.dir/log/Logstream.cpp.o -c /home/zhangyc/webserver/log/Logstream.cpp
+
+CMakeFiles/echoserver.dir/log/Logstream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/log/Logstream.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/log/Logstream.cpp > CMakeFiles/echoserver.dir/log/Logstream.cpp.i
+
+CMakeFiles/echoserver.dir/log/Logstream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/log/Logstream.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/log/Logstream.cpp -o CMakeFiles/echoserver.dir/log/Logstream.cpp.s
+
+CMakeFiles/echoserver.dir/log/logging.cpp.o: CMakeFiles/echoserver.dir/flags.make
+CMakeFiles/echoserver.dir/log/logging.cpp.o: ../log/logging.cpp
+CMakeFiles/echoserver.dir/log/logging.cpp.o: CMakeFiles/echoserver.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/echoserver.dir/log/logging.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/echoserver.dir/log/logging.cpp.o -MF CMakeFiles/echoserver.dir/log/logging.cpp.o.d -o CMakeFiles/echoserver.dir/log/logging.cpp.o -c /home/zhangyc/webserver/log/logging.cpp
+
+CMakeFiles/echoserver.dir/log/logging.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/echoserver.dir/log/logging.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zhangyc/webserver/log/logging.cpp > CMakeFiles/echoserver.dir/log/logging.cpp.i
+
+CMakeFiles/echoserver.dir/log/logging.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/echoserver.dir/log/logging.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zhangyc/webserver/log/logging.cpp -o CMakeFiles/echoserver.dir/log/logging.cpp.s
+
 # Object files for target echoserver
 echoserver_OBJECTS = \
 "CMakeFiles/echoserver.dir/test/echo_server.cpp.o" \
@@ -250,7 +362,15 @@ echoserver_OBJECTS = \
 "CMakeFiles/echoserver.dir/tcp/eventloopthreadpool.cpp.o" \
 "CMakeFiles/echoserver.dir/tcp/tcpconnection.cpp.o" \
 "CMakeFiles/echoserver.dir/tcp/tcpserver.cpp.o" \
-"CMakeFiles/echoserver.dir/tcp/util.cpp.o"
+"CMakeFiles/echoserver.dir/tcp/util.cpp.o" \
+"CMakeFiles/echoserver.dir/http/httpcontext.cpp.o" \
+"CMakeFiles/echoserver.dir/http/httprequest.cpp.o" \
+"CMakeFiles/echoserver.dir/http/httpresponse.cpp.o" \
+"CMakeFiles/echoserver.dir/http/httpserver.cpp.o" \
+"CMakeFiles/echoserver.dir/timer/timequeue.cpp.o" \
+"CMakeFiles/echoserver.dir/timer/timer.cpp.o" \
+"CMakeFiles/echoserver.dir/log/Logstream.cpp.o" \
+"CMakeFiles/echoserver.dir/log/logging.cpp.o"
 
 # External object files for target echoserver
 echoserver_EXTERNAL_OBJECTS =
@@ -267,9 +387,17 @@ test/echoserver: CMakeFiles/echoserver.dir/tcp/eventloopthreadpool.cpp.o
 test/echoserver: CMakeFiles/echoserver.dir/tcp/tcpconnection.cpp.o
 test/echoserver: CMakeFiles/echoserver.dir/tcp/tcpserver.cpp.o
 test/echoserver: CMakeFiles/echoserver.dir/tcp/util.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/http/httpcontext.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/http/httprequest.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/http/httpresponse.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/http/httpserver.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/timer/timequeue.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/timer/timer.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/log/Logstream.cpp.o
+test/echoserver: CMakeFiles/echoserver.dir/log/logging.cpp.o
 test/echoserver: CMakeFiles/echoserver.dir/build.make
 test/echoserver: CMakeFiles/echoserver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable test/echoserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhangyc/webserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable test/echoserver"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/echoserver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -3,6 +3,7 @@
 #include "buffer.h"
 #include "util.h"
 #include "eventloop.h"
+#include "httpcontext.h"
 #include "commom.h"
 
 #include <memory>
@@ -27,6 +28,8 @@ TcpConnection::TcpConnection(EventLoop* _loop, int connfd, int connid) : loop_(_
     }
     read_buf_ = std::make_unique<Buffer>();
     send_buf_ = std::make_unique<Buffer>();
+
+    context_ = std::make_unique<HttpContext>();
 }
 
 TcpConnection::~TcpConnection(){
@@ -78,28 +81,29 @@ EventLoop *TcpConnection::loop() const { return loop_; }
 int TcpConnection::id() const { return connid_; }
 int TcpConnection::fd() const { return connfd_; }
 TcpConnection::ConnectionState TcpConnection::state() const { return state_; }
-void TcpConnection::set_send_buf(const char *str) { send_buf_->set_buf(str); }
+//void TcpConnection::set_send_buf(const char *str) { send_buf_->set_buf(str); }
 Buffer *TcpConnection::read_buf(){ return read_buf_.get(); }
 Buffer *TcpConnection::send_buf() { return send_buf_.get(); }
 
 void TcpConnection::Read(){
-    read_buf_ -> Clear();
+    read_buf_ -> ReSetIndex();
     ReadNonBlocking();
 }
 
-void TcpConnection::Send(const std::string &msg){
-    set_send_buf(msg.c_str());
-    Write();
+void TcpConnection::Send(const char* msg){
+    Send(msg, static_cast<int>(strlen(msg)));
 }
-
-void TcpConnection::Send(const char *msg){
-    set_send_buf(msg);
+void TcpConnection::Send(const std::string &msg){
+    Send(msg.data(), static_cast<int>(msg.size()));
+}
+void TcpConnection::Send(const char *msg, int len){
+    send_buf_ -> Append(msg, len);
     Write();
 }
 
 void TcpConnection::Write(){
     WriteNonBlocking();
-    send_buf_ -> Clear();
+    send_buf_ -> ReSetIndex();
 }
 
 void TcpConnection::ReadNonBlocking(){
@@ -130,10 +134,11 @@ void TcpConnection::ReadNonBlocking(){
 }
 
 void TcpConnection::WriteNonBlocking() {
-  char buf[send_buf_->Size()];
-  memcpy(buf, send_buf_->c_str(), send_buf_->Size());
-  int data_size = send_buf_->Size();
+  char buf[send_buf_->readablebytes()];
+  memcpy(buf, send_buf_->beginread(), send_buf_ -> readablebytes());
+  int data_size = send_buf_ -> readablebytes();
   int data_left = data_size;
+
   while (data_left > 0) {
     printf("start write\n");
     ssize_t bytes_write = write(connfd_, buf + data_size - data_left, data_left);
@@ -151,4 +156,14 @@ void TcpConnection::WriteNonBlocking() {
     }
     data_left -= bytes_write;
   }
+}
+
+HttpContext* TcpConnection::context() const{
+    return context_.get();
+}
+
+TimeStamp TcpConnection::timestamp() const{ return timestamp_;}
+
+void TcpConnection::UpdataTimeStamp(TimeStamp now){
+    timestamp_ = now;
 }

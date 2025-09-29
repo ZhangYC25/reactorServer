@@ -127,4 +127,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/echoserver.dir/DependInfo.cmake"
+  "CMakeFiles/httpserver.dir/DependInfo.cmake"
   )

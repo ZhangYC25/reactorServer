@@ -1,3 +1,4 @@
 /home/zhangyc/webserver/build/CMakeFiles/echoserver.dir
+/home/zhangyc/webserver/build/CMakeFiles/httpserver.dir
 /home/zhangyc/webserver/build/CMakeFiles/edit_cache.dir
 /home/zhangyc/webserver/build/CMakeFiles/rebuild_cache.dir

@@ -1,11 +1,14 @@
 #pragma once
 #include "commom.h"
+#include "timestamp.h"
 
 #include <functional>
 #include <string>
 #include <memory>
 
+class HttpContext;
 class Buffer;
+
 class TcpConnection : public std::enable_shared_from_this<TcpConnection>{
 public:
     enum ConnectionState {
@@ -29,16 +32,16 @@ public:
     void set_message_callback(std::function<void (const std::shared_ptr<TcpConnection> &)> const& fn);
 
     // 设定send buf
-    void set_send_buf(const char *str); 
+    //void set_send_buf(const char *str); 
     Buffer *read_buf();
     Buffer *send_buf();
 
 
     void Read(); // 读操作
     void Write(); // 写操作
-    void Send(const std::string &msg); // 输出信息
-    void Send(const char *msg, int len); // 输出信息
-    void Send(const char *msg);
+    void Send(const char* msg); // 输出信息
+    void Send(const char* msg, int len); // 输出信息
+    void Send(const std::string &msg);
 
     void HandleMessage(); // 当接收到信息时，进行回调
 
@@ -49,6 +52,11 @@ public:
     EventLoop* loop() const;
     int fd() const;
     int id() const;
+
+    HttpContext* context() const;
+
+    TimeStamp timestamp() const;
+    void UpdataTimeStamp(TimeStamp now);
 private:
     // 该连接绑定的Socket
     EventLoop *loop_;
@@ -67,4 +75,8 @@ private:
 
     void ReadNonBlocking();
     void WriteNonBlocking();
+
+    std::unique_ptr<HttpContext> context_;
+
+    TimeStamp timestamp_;
 };

@@ -6,6 +6,7 @@
 #include "eventloop.h"
 #include "eventloopthreadpool.h"
 #include "commom.h"
+#include "logging.h"
 #include <unistd.h>
 #include <iostream>
 // #include <memory>
@@ -60,7 +61,7 @@ void TcpServer::HandleClose(const std::shared_ptr<TcpConnection> & conn){
 }
 
 inline void TcpServer::HandleCloseInLoop(const std::shared_ptr<TcpConnection> & conn){
-    std::cout << CurrentThread::tid()  << " TcpServer::HandleCloseInLoop - Remove connection id: " <<  conn->id() << " and fd: " << conn->fd() << std::endl;
+    LOG_INFO << "TcpServer::HandleCloseInLoop - Remove connection [id#" <<  conn->id() << "-fd#" << conn->fd() << "]";
     auto it = connectionsMap_.find(conn->fd());
     assert(it != connectionsMap_.end());
     connectionsMap_.erase(connectionsMap_.find(conn->fd()));
