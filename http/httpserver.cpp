@@ -59,7 +59,7 @@ void HttpServer::onMessage(const TcpConnectionPtr &conn){
             conn -> UpdataTimeStamp(TimeStamp::Now());
         }
         HttpContext *context = conn->context();
-        if (!context->ParaseRequest(conn->read_buf()->c_str(), conn->read_buf()->Size()))
+        if (!context->ParaseRequest(conn->read_buf()->RetrieveAllAsString()))
         {
             conn->Send("HTTP/1.1 400 Bad Request\r\n\r\n");
             conn->HandleClose();
@@ -85,7 +85,7 @@ void HttpServer::onRequest(const TcpConnectionPtr &conn, const HttpRequest &requ
     HttpResponse response(close);
     response_callback_(request, &response);
 
-    conn->Send(response.message().c_str());
+    conn->Send(response.message());
 
     if(response.IsCloseConnection()){
         conn->HandleClose();

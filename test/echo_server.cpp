@@ -1,10 +1,10 @@
-#include "../tcp/acceptor.h"
-#include "../tcp/eventloop.h"
-#include "../tcp/tcpserver.h"
-#include "../tcp/buffer.h"
-#include "../tcp/eventloopthreadpool.h"
-#include "../tcp/tcpconnection.h"
-#include "../base/currentthread.h"
+#include "acceptor.h"
+#include "eventloop.h"
+#include "tcpserver.h"
+#include "buffer.h"
+#include "eventloopthreadpool.h"
+#include "tcpconnection.h"
+#include "currentthread.h"
 #include <iostream>
 #include <functional>
 #include <arpa/inet.h>
@@ -56,8 +56,8 @@ void EchoServer::onMessage(const std::shared_ptr<TcpConnection> & conn){
     // std::cout << CurrentThread::tid() << " EchoServer::onMessage" << std::endl;
     if (conn->state() == TcpConnection::ConnectionState::Connected)
     {
-        std::cout << CurrentThread::tid() << "Message from clent " << conn->read_buf()->c_str() << std::endl;
-        conn->Send(conn->read_buf()->c_str());
+        std::cout << CurrentThread::tid() << "Message from clent " << conn->read_buf()->PeekAllAsString() << std::endl;
+        conn->Send(conn->read_buf()->PeekAllAsString());
         //conn->HandleClose();
     }
 }

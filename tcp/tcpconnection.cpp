@@ -1,6 +1,7 @@
 #include "tcpconnection.h"
 #include "channel.h"
 #include "buffer.h"
+#include "logging.h"
 #include "util.h"
 #include "eventloop.h"
 #include "httpcontext.h"
@@ -24,6 +25,7 @@ TcpConnection::TcpConnection(EventLoop* _loop, int connfd, int connid) : loop_(_
         channel_ = std::make_unique<Channel>(connfd, loop_);
         channel_ -> EnableET();
         channel_ -> set_read_callback(std::bind(&TcpConnection::HandleMessage, this));
+        channel_ -> set_write_callback(std::bind(&TcpConnection::HandleWrite,this));
         //channel_ -> EnableRead();
     }
     read_buf_ = std::make_unique<Buffer>();
@@ -68,6 +70,11 @@ void TcpConnection::HandleMessage(){
     }
 }
 
+void TcpConnection::HandleWrite(){
+    LOG_INFO << "TcpConnection::HandleWrite";
+    WriteNonBlocking();
+}
+
 void TcpConnection::HandleClose(){
     if (state_ != ConnectionState::Disconnected) {
         state_ = ConnectionState::Disconnected;
@@ -97,8 +104,27 @@ void TcpConnection::Send(const std::string &msg){
     Send(msg.data(), static_cast<int>(msg.size()));
 }
 void TcpConnection::Send(const char *msg, int len){
-    send_buf_ -> Append(msg, len);
-    Write();
+    int remaining = len;
+    int send_size = 0;
+    if (send_buf_ -> readablebytes() == 0) {
+        send_size = static_cast<int>(write(connfd_, msg, len));
+        if (send_size >= 0) {
+            remaining -= send_size;
+        } else if ((send_size == -1) && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) {
+            //说明此时TCP缓冲区是慢的，没有办法写入，什么都不做
+            send_size = 0;// 说明实际上没有发送数据
+        } else {
+            LOG_ERROR << "TcpConnection::Send - TcpConnection Send ERROR";
+            HandleClose();
+            return;
+        }
+    }
+    assert(remaining <= len);
+    if (remaining > 0) {
+        send_buf_ -> Append(msg + send_size, remaining);
+
+        channel_ -> EnableWrite();
+    }
 }
 
 void TcpConnection::Write(){
@@ -134,28 +160,20 @@ void TcpConnection::ReadNonBlocking(){
 }
 
 void TcpConnection::WriteNonBlocking() {
-  char buf[send_buf_->readablebytes()];
-  memcpy(buf, send_buf_->beginread(), send_buf_ -> readablebytes());
-  int data_size = send_buf_ -> readablebytes();
-  int data_left = data_size;
+    int remaining = send_buf_->readablebytes();
+    int send_size = static_cast<int>(write(connfd_, send_buf_->Peek(), remaining));
+    if((send_size == -1) && 
+                ((errno == EAGAIN) || (errno == EWOULDBLOCK))){
+        // 说明此时TCP缓冲区是满的，没有办法写入，什么都不做 
+        // 主要是防止，在Send时write后监听EPOLLOUT，但是TCP缓冲区还是满的，
+        send_size = 0;
+    }
+    else if (send_size == -1){
+        LOG_ERROR << "TcpConnection::Send - TcpConnection Send ERROR";
+    }
 
-  while (data_left > 0) {
-    printf("start write\n");
-    ssize_t bytes_write = write(connfd_, buf + data_size - data_left, data_left);
-    if (bytes_write == -1 && errno == EINTR) {
-      printf("continue writing\n");
-      continue;
-    }
-    if (bytes_write == -1 && errno == EAGAIN) {
-      break;
-    }
-    if (bytes_write == -1) {
-      printf("Other error on client fd %d\n", connfd_);
-      HandleClose();
-      break;
-    }
-    data_left -= bytes_write;
-  }
+    remaining -= send_size;
+    send_buf_->UpdataIndex(send_size);
 }
 
 HttpContext* TcpConnection::context() const{

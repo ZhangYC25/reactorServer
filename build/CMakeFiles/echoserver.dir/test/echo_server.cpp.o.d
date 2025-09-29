@@ -1,6 +1,6 @@
 CMakeFiles/echoserver.dir/test/echo_server.cpp.o: \
  /home/zhangyc/webserver/test/echo_server.cpp /usr/include/stdc-predef.h \
- /home/zhangyc/webserver/test/../tcp/acceptor.h \
+ /home/zhangyc/webserver/tcp/acceptor.h \
  /home/zhangyc/webserver/base/commom.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -115,8 +115,8 @@ CMakeFiles/echoserver.dir/test/echo_server.cpp.o: \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h /usr/include/c++/11/functional \
  /usr/include/c++/11/bits/std_function.h \
- /home/zhangyc/webserver/test/../tcp/eventloop.h \
- /home/zhangyc/webserver/test/../tcp/Epoll.h \
+ /home/zhangyc/webserver/tcp/eventloop.h \
+ /home/zhangyc/webserver/tcp/Epoll.h \
  /usr/include/x86_64-linux-gnu/sys/epoll.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
@@ -160,20 +160,20 @@ CMakeFiles/echoserver.dir/test/echo_server.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
- /home/zhangyc/webserver/test/../tcp/tcpserver.h /usr/include/c++/11/map \
+ /home/zhangyc/webserver/tcp/tcpserver.h /usr/include/c++/11/map \
  /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
- /usr/include/c++/11/bits/erase_if.h \
- /home/zhangyc/webserver/test/../tcp/buffer.h \
- /home/zhangyc/webserver/test/../tcp/eventloopthreadpool.h \
- /home/zhangyc/webserver/test/../tcp/eventloopthread.h \
+ /usr/include/c++/11/bits/erase_if.h /home/zhangyc/webserver/tcp/buffer.h \
+ /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
+ /home/zhangyc/webserver/tcp/eventloopthreadpool.h \
+ /home/zhangyc/webserver/tcp/eventloopthread.h \
  /usr/include/c++/11/condition_variable /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /home/zhangyc/webserver/test/../tcp/tcpconnection.h \
+ /home/zhangyc/webserver/tcp/tcpconnection.h \
  /home/zhangyc/webserver/timer/timestamp.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
- /home/zhangyc/webserver/test/../base/currentthread.h \
+ /home/zhangyc/webserver/base/currentthread.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

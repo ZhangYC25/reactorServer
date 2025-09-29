@@ -13,6 +13,8 @@ const char* Buffer::beginread() const { return begin() + read_index_; }
 char* Buffer::beginwrite() { return begin() + write_index_; }
 const char* Buffer::beginwrite() const { return begin() + write_index_; }
 
+
+
 void Buffer::Append(const char* message){
     Append(message, static_cast<int>(strlen(message)));
 }
@@ -55,7 +57,7 @@ std::string Buffer::PeekAllAsString(){
 }
 
 void Buffer::UpdataIndex(int len){
-    assert(readablebytes() > len);
+    assert(readablebytes() >= len);
     if (len + read_index_ < write_index_){
         read_index_ += len;
     } else {
